@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVerse - Your Gaming Universe</title>
+    <link rel="icon" href="sitelogo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+        
+        .font-gaming { font-family: 'Rajdhani', sans-serif; }
+        .font-body { font-family: 'Poppins', sans-serif; }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+        }
+        
+        .game-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+            border: 2px solid #e2e8f0;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #ddd6fe 0%, #bfdbfe 50%, #fce7f3 100%);
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-body">
+    <!-- Navigation -->
+    <nav class="bg-white bg-opacity-95 backdrop-blur-sm fixed w-full z-50 border-b border-blue-200 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-gaming font-bold text-blue-600">🎮 GameVerse</div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-blue-600 hover:text-blue-700 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#games" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Games</a>
+                        <a href="#news" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">News</a>
+                        <a href="#community" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Community</a>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors neon-glow">Join Now</button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-800">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-blue-200 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="text-blue-600 block px-3 py-2 text-base font-medium">Home</a>
+                <a href="#games" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Games</a>
+                <a href="#news" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">News</a>
+                <a href="#community" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Community</a>
+                <button class="bg-blue-600 hover:bg-blue-700 mx-3 mt-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors w-full text-left">Join Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="text-center max-w-4xl mx-auto px-4">
+            <h1 class="text-5xl md:text-7xl font-gaming font-black mb-6 pulse-animation">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                    GAME ON
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 font-light">
+                Discover the ultimate gaming experience with the latest releases, epic adventures, and endless entertainment
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 neon-glow">
+                    🚀 Start Playing
+                </button>
+                <button class="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all">
+                    📺 Watch Trailer
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games Section -->
+    <section id="games" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-gaming font-bold mb-4 text-gray-800">Featured Games</h2>
+                <p class="text-xl text-gray-600">Dive into our most popular gaming experiences</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Game Card 1 - GTA Style -->
+                <div class="game-card rounded-xl p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">🏙️</div>
+                    </div>
+                    <h3 class="text-xl font-gaming font-bold mb-2 text-gray-800">Grand Theft Auto VI</h3>
+                    <p class="text-gray-600 mb-4">Experience the ultimate open-world crime adventure in Vice City with stunning graphics.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$69.99</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-white">
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 - Special Ops -->
+                <div class="game-card rounded-xl p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">🔫</div>
+                    </div>
+                    <h3 class="text-xl font-gaming font-bold mb-2 text-gray-800">Call of Duty: Special Ops</h3>
+                    <p class="text-gray-600 mb-4">Join elite military operations in the most realistic tactical shooter experience.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$59.99</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-white">
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 - Cyberpunk -->
+                <div class="game-card rounded-xl p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">🤖</div>
+                    </div>
+                    <h3 class="text-xl font-gaming font-bold mb-2 text-gray-800">Cyberpunk 2077</h3>
+                    <p class="text-gray-600 mb-4">Dive into the neon-soaked streets of Night City in this futuristic RPG adventure.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$49.99</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-white">
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Card 4 - FIFA -->
+                <div class="game-card rounded-xl p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-green-500 to-green-700 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">⚽</div>
+                    </div>
+                    <h3 class="text-xl font-gaming font-bold mb-2 text-gray-800">FIFA 25</h3>
+                    <p class="text-gray-600 mb-4">Experience the world's most popular football game with enhanced gameplay and graphics.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$59.99</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-white">
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Card 5 - Assassin's Creed -->
+                <div class="game-card rounded-xl p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-red-700 to-yellow-600 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">🗡️</div>
+                    </div>
+                    <h3 class="text-xl font-gaming font-bold mb-2 text-gray-800">Assassin's Creed Mirage</h3>
+                    <p class="text-gray-600 mb-4">Return to the roots of the Assassin's Brotherhood in ancient Baghdad.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$49.99</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-white">
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Card 6 - Fortnite -->
+                <div class="game-card rounded-xl p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">🏗️</div>
+                    </div>
+                    <h3 class="text-xl font-gaming font-bold mb-2 text-gray-800">Fortnite</h3>
+                    <p class="text-gray-600 mb-4">Battle royale with building mechanics in the most popular multiplayer game.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">Free</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-white">
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Card 7 - Apex Legends -->
+                <div class="game-card rounded-xl p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-orange-600 to-red-700 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">🎯</div>
+                    </div>
+                    <h3 class="text-xl font-gaming font-bold mb-2 text-gray-800">Apex Legends</h3>
+                    <p class="text-gray-600 mb-4">Squad-based battle royale with unique legends and tactical gameplay.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">Free</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-white">
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Card 8 - Valorant -->
+                <div class="game-card rounded-xl p-6">
+                    <div class="w-full h-48 bg-gradient-to-br from-teal-500 to-blue-600 rounded-lg mb-4 flex items-center justify-center">
+                        <div class="text-6xl">💥</div>
+                    </div>
+                    <h3 class="text-xl font-gaming font-bold mb-2 text-gray-800">Valorant</h3>
+                    <p class="text-gray-600 mb-4">Tactical 5v5 character-based shooter with unique agent abilities.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">Free</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors text-white">
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gaming News Section -->
+    <section id="news" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-gaming font-bold mb-4 text-gray-800">Latest News</h2>
+                <p class="text-xl text-gray-600">Stay updated with the gaming world</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-blue-400 transition-colors shadow-lg">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <div class="text-5xl">🎯</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">New Tournament Announced</h3>
+                        <p class="text-gray-600 mb-4">Join the biggest gaming tournament of the year with $100K prize pool.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">2 hours ago</span>
+                            <button class="text-blue-600 hover:text-blue-700 font-medium">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-blue-400 transition-colors shadow-lg">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center">
+                        <div class="text-5xl">🆕</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Game Update Released</h3>
+                        <p class="text-gray-600 mb-4">Major update brings new features, characters, and improved gameplay mechanics.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">5 hours ago</span>
+                            <button class="text-blue-600 hover:text-blue-700 font-medium">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-blue-400 transition-colors shadow-lg">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                        <div class="text-5xl">🏆</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Championship Results</h3>
+                        <p class="text-gray-600 mb-4">Congratulations to all winners of the recent esports championship finals.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1 day ago</span>
+                            <button class="text-blue-600 hover:text-blue-700 font-medium">Read More →</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-gaming font-bold mb-4 text-gray-800">Join Our Community</h2>
+                <p class="text-xl text-gray-600">Connect with millions of gamers worldwide</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">👥</div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">5M+</h3>
+                    <p class="text-gray-600">Active Players</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🎮</div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">500+</h3>
+                    <p class="text-gray-600">Games Available</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">1000+</h3>
+                    <p class="text-gray-600">Tournaments</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">💰</div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">$10M+</h3>
+                    <p class="text-gray-600">Prize Money</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 neon-glow">
+                    🚀 Join GameVerse Today
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-gaming font-bold text-blue-400 mb-4">🎮 GameVerse</div>
+                    <p class="text-gray-400">Your ultimate gaming destination for the best games, news, and community.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Games</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Action</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Adventure</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Strategy</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Racing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Community</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Forums</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Discord</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Tournaments</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Leaderboards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Bug Reports</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 GameVerse. All rights reserved. Made with ❤️ for gamers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add interactive effects to buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-opacity-100');
+            } else {
+                nav.classList.remove('bg-opacity-100');
+            }
+        });
+
+        // Game card hover effects
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+
+    <style>
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96e58ef7532091bb',t:'MTc1NTA2MDI3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
